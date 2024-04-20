@@ -1,0 +1,17 @@
+[package]
+name = "analog-dial"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+machine-info = "1.0.9"
+serialport = "4.3.0"
+sysinfo = "0.30.11"
+systemstat = "0.2.3"
+image = "0.25.1"
+tao = "0.27.0"
+tray-icon = "0.13.4"
+toml = "0.8.12"
+serde = "1.0.198"
