@@ -1,25 +1,6 @@
-
 int dataArray[] = { -1, -1, -1, -1 };
 int count = 0;
 int cpu = 5, mem = 6, gpu = 9, net = 10; 
-
-void addData(int data) {
-  if (data == 0) {
-    //RESET
-    analogWrite(11, 0);
-    emptyData();
-  } else {
-    dataArray[count] = data;
-    count++;
-  }
-}
-
-void emptyData() {
-  for (int i = 0; i < 4; i++) {
-    dataArray[i] = -1;
-  }
-  count = 0;
-}
 
 void setup() {
   Serial.begin(9600);  // opens serial port, sets data rate to 9600 bps
@@ -44,6 +25,24 @@ void loop() {
     }
     emptyData();
   }
+}
+
+void addData(int data) {
+  if (data == 0) {
+    //RESET
+    analogWrite(11, 0);
+    emptyData();
+  } else {
+    dataArray[count] = data;
+    count++;
+  }
+}
+
+void emptyData() {
+  for (int i = 0; i < 4; i++) {
+    dataArray[i] = -1;
+  }
+  count = 0;
 }
 
 void dataInput() {
