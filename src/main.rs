@@ -1,3 +1,5 @@
+#![windows_subsystem = "windows"]
+
 extern crate serialport;
 extern crate sysinfo;
 extern crate systemstat;
@@ -127,7 +129,7 @@ fn receive(serial_port: &mut Box<dyn SerialPort>) {
 // Tray icon fcuntions
 
 fn tray_icon() {
-    let path = concat!(env!("CARGO_MANIFEST_DIR"), "/src/icon.png");
+    let path = concat!(env!("CARGO_MANIFEST_DIR"), "/resources/icon.png");
     let event_loop = EventLoopBuilder::new().build();
     let tray_menu = Menu::new();
     let quit_i = MenuItem::new("Quit", true, None);
