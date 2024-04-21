@@ -80,7 +80,7 @@ fn analog_control() {
         //thread::sleep(Duration::from_millis(1000));
 
         memory = sys.memory().unwrap();
-        used_mem_per = memory.free.as_u64() as f64 / memory.total.as_u64() as f64;
+        used_mem_per = 1.0 - (memory.free.as_u64() as f64 / memory.total.as_u64() as f64);
         sending_data = ((used_mem_per * 230.0) + 25.0) as u8;
         send(sending_data, &mut serial_port);
         println!("Output (mem): {}", sending_data);
